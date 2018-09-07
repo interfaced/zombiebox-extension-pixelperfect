@@ -1,9 +1,29 @@
 {
   "name": "zombiebox-extension-pixelperfect",
-  "version": "0.5.0",
-  "main": "zombiebox-extension.js",
+  "description": "ZombieBox extension for Pixel Perfect testing",
+  "version": "0.5.1",
+  "license": "MIT",
+  "author": "Interfaced (http://interfaced.tv)",
   "files": [
-    "lib",
-    "zombiebox-extension.js"
-  ]
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "index.js",
+    "lib"
+  ],
+  "keywords": [
+    "zombiebox",
+    "zombiebox-extension",
+    "pixel",
+    "perfect"
+  ],
+  "scripts": {
+    "lint": "eslint index.js lib"
+  },
+  "dependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-interfaced": "^1.2.0",
+    "eslint-plugin-goog": "^1.0.0",
+    "eslint-plugin-interfaced": "^1.2.0"
+  }
 }

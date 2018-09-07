@@ -2,10 +2,9 @@ const path = require('path');
 
 
 /**
- * @constructor
  * @implements {IZBAddon}
  */
-class ExtensionPixelPerfect {
+class PixelPerfectExtension {
 	/**
 	 * @override
 	 */
@@ -28,7 +27,8 @@ class ExtensionPixelPerfect {
 	}
 }
 
+
 /**
  * @type {IZBAddon}
  */
-module.exports = ExtensionPixelPerfect;
+module.exports = PixelPerfectExtension;
