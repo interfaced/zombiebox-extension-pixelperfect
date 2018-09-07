@@ -33,6 +33,7 @@ yourApp.Application.prototype.onReady = function() {
 	this._pp = new zb.ext.pixelPerfect.Controller();
 	this._pp.attachToApp(this);
 	// ...
+    goog.base(this, 'onReady');
 };
 
 

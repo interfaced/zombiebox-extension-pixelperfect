@@ -1,6 +1,6 @@
 {
   "name": "zombiebox-extension-pixelperfect",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "main": "zombiebox-extension.js",
   "files": [
     "lib",
