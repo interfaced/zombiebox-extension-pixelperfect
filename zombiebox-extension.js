@@ -1,12 +1,11 @@
-var path = require('path');
+const path = require('path');
 
 
 /**
  * @constructor
  * @implements {IZBAddon}
  */
-var Extension = class {
-
+class ExtensionPixelPerfect {
 	/**
 	 * @override
 	 */
@@ -14,24 +13,22 @@ var Extension = class {
 		return 'pixelperfect';
 	}
 
-
 	/**
-	 * @return {string}
+	 * @override
 	 */
 	getPublicDir() {
 		return path.join(__dirname, 'lib');
 	}
 
-
 	/**
-	 * @return {Object}
+	 * @override
 	 */
 	getConfig() {
 		return {};
 	}
-};
+}
 
 /**
  * @type {IZBAddon}
  */
-module.exports = Extension;
+module.exports = ExtensionPixelPerfect;
