@@ -5,34 +5,31 @@ var path = require('path');
  * @constructor
  * @implements {IZBAddon}
  */
-var Extension = function() {
+var Extension = class {
 
+	/**
+	 * @override
+	 */
+	getName() {
+		return 'pixelperfect';
+	}
+
+
+	/**
+	 * @return {string}
+	 */
+	getPublicDir() {
+		return path.join(__dirname, 'lib');
+	}
+
+
+	/**
+	 * @return {Object}
+	 */
+	getConfig() {
+		return {};
+	}
 };
-
-
-/**
- * @return {string}
- */
-Extension.prototype.getName = function() {
-	return 'pixelperfect';
-};
-
-
-/**
- * @return {string}
- */
-Extension.prototype.getPublicDir = function() {
-	return path.join(__dirname, 'lib');
-};
-
-
-/**
- * @return {Object}
- */
-Extension.prototype.getConfig = function() {
-	return {};
-};
-
 
 /**
  * @type {IZBAddon}
