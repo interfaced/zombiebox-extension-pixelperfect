@@ -1,5 +1,13 @@
 # Change log
 
+## 0.5.2 (release date: 08.09.2018)
+
+* Fixed LICENSE file name
+
+## 0.5.1 (release date: 31.08.2018)
+
+* Linting, ES6
+
 ## 0.5.0 (release date: 30.08.2018)
 
 * Added color inversion feature

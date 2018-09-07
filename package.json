@@ -1,7 +1,7 @@
 {
   "name": "zombiebox-extension-pixelperfect",
   "description": "ZombieBox extension for Pixel Perfect testing",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "license": "MIT",
   "author": "Interfaced (http://interfaced.tv)",
   "files": [
