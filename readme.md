@@ -10,7 +10,7 @@ Add dependency to package.json:
   "version": "0.1.0",
   "dependencies": {
     //...
-    "zombiebox-extension-pixelperfect": "~0"
+    "zombiebox-extension-pixelperfect": "~0.2.0"
   }
 }
 
@@ -30,7 +30,7 @@ Create instance of PixelPerfect controller:
 ```javascript
 
 yourApp.Application.prototype.onReady = function() {
-	this._pp = new zb.ext.pixelPerfect.Controller(this._body);
+	this._pp = new zb.ext.pixelPerfect.Controller();
 	this._pp.attachToApp(this);
 	// ...
 };
