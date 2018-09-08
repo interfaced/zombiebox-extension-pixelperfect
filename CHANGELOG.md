@@ -1,5 +1,9 @@
 # Change log
 
+## 0.5.3 (release date: 09.09.2018)
+
+* Dev dependencies moved to devDependencies section.
+
 ## 0.5.2 (release date: 08.09.2018)
 
 * Fixed LICENSE file name
