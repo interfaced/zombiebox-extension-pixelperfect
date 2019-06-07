@@ -4,59 +4,56 @@
 
 ## Usage
 
-Instantiate the controller class (`zb.ext.pixelPerfect.Controller`) and attach it to the application:
+Instantiate the controller class (`Controller`) and attach it to the application:
 
 ```js
-goog.provide('my.Application');
-goog.require('my.BaseApplication');
-goog.require('zb.ext.pixelPerfect.Controller');
+import PixelPerfectController from 'pixelperfect/controller';
+import BaseApplication from 'generated/zb/base-application';
 
 /**
  */
-my.Application = class extends my.BaseApplication {
-    /**
-     */
-    onReady() {
-        this._pixelPerfectController = new zb.ext.pixelPerfect.Controller();
-        this._pixelPerfectController.attachToApp(this);
-    }
+export default class Application extends BaseApplication {
+	/**
+	 */
+	onReady() {
+		this._pixelPerfectController = new PixelPerfectController();
+		this._pixelPerfectController.attachToApp(this);
+	}
 }
 ```
 
 Let the controller to intercept processing of the remote:
 
 ```js
-goog.provide('my.Application');
-goog.require('my.BaseApplication');
-goog.require('zb.ext.pixelPerfect.Controller');
+import PixelPerfectController from 'pixelperfect/controller';
+import BaseApplication from 'generated/zb/base-application';
 
 /**
  */
-my.Application = class extends my.BaseApplication {
-    /**
-     * @override
-     */
-    processKey(zbKey, opt_e) {
-        if (this._pixelPerfectController.processKey(zbKey, opt_e)) {
-        	return true;
-        }
+export default class Application extends BaseApplication {
+	/**
+	 * @override
+	 */
+	processKey(zbKey, opt_e) {
+		if (this._pixelPerfectController.processKey(zbKey, opt_e)) {
+			return true;
+		}
 
-        return super.processKey(zbKey, opt_e);
-    }
+		return super.processKey(zbKey, opt_e);
+	}
 }
 ```
 
-Implement interface `zb.ext.pixelPerfect.IMarkupProvider` by the scene which is supposed to be tested.
+Implement interface `IMarkupProvider` by the scene which is supposed to be tested.
 
 ```js
-goog.provide('my.scenes.Home');
-goog.provide('zb.layers.CuteScene');
-goog.provide('zb.ext.pixelPerfect.IMarkupProvider');
+import AbstractCuteScene from 'cutejs/layers/abstract-scene';
+import IMarkupProvider from 'pixelperfect/i-markup-provider';
 
 /*
- * @implements {zb.ext.pixelPerfect.IMarkupProvider}
+ * @implements {IMarkupProvider}
  */
-my.scenes.Home = class extends zb.layers.CuteScene {
+class Home extends AbstractCuteScene {
 	/**
 	 * @override
 	 */
@@ -65,7 +62,7 @@ my.scenes.Home = class extends zb.layers.CuteScene {
 			'http://zombiebox.tv/home-markup-reference.png',
 			'web/markup-references/home.png'
 		];
-    }
+	}
 }
 ```
 
@@ -113,12 +110,14 @@ Toggle color inversion.
 
 ## Custom key sequence
 
-The default key sequence can be changed by calling `zb.ext.pixelPerfect.Controller#setKeySequence` method:
+The default key sequence can be changed by calling `Controller#setKeySequence` method:
 
 ```js
+import Keys from 'zb/device/input/keys';
+
 this._pixelPerfectController.setKeySequence([
-    zb.device.input.Keys.DIGIT_1,
-    zb.device.input.Keys.DIGIT_2,
-    zb.device.input.Keys.DIGIT_3,
+	Keys.DIGIT_1,
+	Keys.DIGIT_2,
+	Keys.DIGIT_3,
 ]);
 ```

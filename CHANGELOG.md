@@ -1,5 +1,26 @@
 # Change log
 
+## 2.0.0 (07.06.2019)
+
+* No changes since alphas
+
+## 2.0.0-alpha.2 (13.03.2019)
+
+* Support ZombieBox alpha.2 and zombiebox-extension-cutejs
+
+## 2.0.0-alpha.1 (23.05.2019)
+
+* Support ZombieBox alpha.8 (implement `AbstractExtension`)
+* Drop support for Node 8
+
+## 2.0.0-alpha.1 (13.02.2019)
+
+Extension code migrated to ECMAScript modules.
+
+## 1.0.0 (release date: 01.02.2019)
+
+* Added peerDependency to zombiebox@1.0.0
+
 ## 0.5.3 (release date: 09.09.2018)
 
 * Dev dependencies moved to devDependencies section.

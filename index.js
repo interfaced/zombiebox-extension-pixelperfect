@@ -1,10 +1,10 @@
 const path = require('path');
+const {AbstractExtension} = require('zombiebox');
 
 
 /**
- * @implements {IZBAddon}
  */
-class PixelPerfectExtension {
+class PixelPerfectExtension extends AbstractExtension {
 	/**
 	 * @override
 	 */
@@ -15,7 +15,7 @@ class PixelPerfectExtension {
 	/**
 	 * @override
 	 */
-	getPublicDir() {
+	getSourcesDir() {
 		return path.join(__dirname, 'lib');
 	}
 
@@ -25,10 +25,21 @@ class PixelPerfectExtension {
 	getConfig() {
 		return {};
 	}
+
+	/**
+	 * @override
+	 */
+	generateCode(projectConfig) {
+		return {};
+	}
+
+	/**
+	 * @override
+	 */
+	buildCLI(yargs, application) {
+		return undefined;
+	}
 }
 
 
-/**
- * @type {IZBAddon}
- */
 module.exports = PixelPerfectExtension;
