@@ -1,35 +1,32 @@
-const {join, dirname} = require('path');
-
-function resolveModulePath(packageName) {
-	const packageInfoPath = require.resolve(`${packageName}/package.json`);
-
-	return join(dirname(packageInfoPath), require(packageInfoPath).module);
-}
+const copyright = [
+	'',
+	' * This file is part of the ZombieBox package.',
+	' *',
+	` * Copyright © 2015-${(new Date).getFullYear()}, Interfaced`,
+	' *',
+	' * For the full copyright and license information, please view the LICENSE',
+	' * file that was distributed with this source code.',
+	' '
+];
 
 module.exports = {
 	extends: 'interfaced',
+	plugins: ['header'],
 	overrides: [
 		{
-			...require('eslint-config-interfaced/overrides/esm'),
 			files: ['lib/**/*.js'],
+			extends: 'interfaced/esm',
 			settings: {
-				'import/resolver': {
-					alias: [
-						['zb', resolveModulePath('zombiebox')]
-					]
-				}
-			}
-		},
-		{
-			files: ['lib/**/*.js'],
+				'import/resolver': 'zombiebox'
+			},
 			rules: {
-				'import/extensions': {jst: 'always'},
-				'import/no-unresolved': ['error', {ignore: ['^generated/']}]
+				'import/extensions': ['error', {jst: 'always'}],
+				'header/header': ['error', 'block', copyright]
 			}
 		},
 		{
-			...require('eslint-config-interfaced/overrides/node'),
-			files: ['index.js']
+			files: ['index.js'],
+			extends: 'interfaced/node',
 		}
 	]
 };
