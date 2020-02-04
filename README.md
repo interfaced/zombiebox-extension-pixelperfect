@@ -113,11 +113,11 @@ Toggle color inversion.
 The default key sequence can be changed by calling `Controller#setKeySequence` method:
 
 ```js
-import Keys from 'zb/device/input/keys';
+import Key from 'zb/device/input/key';
 
 this._pixelPerfectController.setKeySequence([
-	Keys.DIGIT_1,
-	Keys.DIGIT_2,
-	Keys.DIGIT_3,
+	Key.DIGIT_1,
+	Key.DIGIT_2,
+	Key.DIGIT_3,
 ]);
 ```
